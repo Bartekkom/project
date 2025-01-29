@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ ticket.match_name }} - Szczegóły meczu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Kontener z logo -->
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="Logo 1" class="logo">
+        <img src="{{ url_for('static', filename='images/logo2.png') }}" alt="Logo 2" class="logo">
+    </div>
+
+    <!-- Nagłówek z linią oddzielającą -->
+    <div class="match-header">
+        <h1>{{ ticket.match_name }}</h1>
+        <div class="header-line"></div>
+    </div>
+
+    <div class="match-details-container">
+        <h2 class="sector-heading">Wybierz sektor:</h2>
+
+        <!-- Kontener z grafiką boiska i sektorami -->
+        <div class="stadium-container">
+            <img src="{{ url_for('static', filename='images/pitch.jpg') }}" alt="Boisko" class="pitch-image">
+            
+            <!-- Sektor A -->
+            <div class="sector sector-a" data-sector="A">
+                <span class="sector-label">A</span>
+                <span class="sector-price">{{ price_a }} PLN</span>
+            </div>
+
+            <!-- Sektor B -->
+            <div class="sector sector-b" data-sector="B">
+                <span class="sector-label">B</span>
+                <span class="sector-price">{{ price_b }} PLN</span>
+            </div>
+
+            <!-- Sektor C -->
+            <div class="sector sector-c" data-sector="C">
+                <span class="sector-label">C</span>
+                <span class="sector-price">{{ price_c }} PLN</span>
+            </div>
+
+            <!-- Sektor D -->
+            <div class="sector sector-d" data-sector="D">
+                <span class="sector-label">D</span>
+                <span class="sector-price">{{ price_d }} PLN</span>
+            </div>
+        </div>
+
+        <!-- Przycisk powrotu -->
+        <a href="/" class="back-button">Powrót do meczów</a>
+    </div>
+</body>
+</html>
